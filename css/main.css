@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #111517;
+}
+
+.container {
+  margin: 0 30pz;
+}
+@media (min-width: 1200px) {
+  .container {
+    margin: 0 100px !important;
+  }
+}
+@media (min-width: 922px) and (max-width: 1199px) {
+  .container {
+    margin: 0 60px !important;
+  }
+}
+@media (min-width: 768) and (max-width: 921px) {
+  .container {
+    margin: 0 40px !important;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  background-color: #202c37;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 0;
+}
+header .container .logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+header .container .mode div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .container .mode div.light-mode {
+  display: none;
+}
+header .container .mode div i {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+header .container .mode div span {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.fields {
+  margin: 20px 0 0 0;
+}
+.fields .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+@media (max-width: 500px) {
+  .fields .container > * {
+    width: 100%;
+  }
+}
+.fields .container .search-field {
+  padding: 10px 20px 10px 50px;
+  background-color: #202c37;
+  border-radius: 4px;
+  position: relative;
+}
+.fields .container .search-field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  color: white;
+}
+.fields .container .search-field input {
+  background: none;
+  border: none;
+  outline: none;
+  caret-color: white;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: capitalize;
+  color: white;
+}
+.fields .container .search-field input::placeholder {
+  transition: .3s;
+}
+.fields .container .search-field input:focus::placeholder {
+  opacity: 0;
+}
+.fields .container select {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  background-color: #202c37;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+}
+.fields .container select option {
+  display: block;
+  padding: 5px 0;
+}
+
+.countries {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.countries .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.countries .container .box {
+  background-color: #202c37;
+  color: white;
+}
+.countries .container .box .flag img {
+  display: block;
+  height: 150px;
+  width: 100%;
+}
+.countries .container .box .info {
+  padding: 20px 15px;
+}
+.countries .container .box .info h2 {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.countries .container .box .info p {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.countries .container .box .info p:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+.full-info .btn {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 0 0 #2b3945;
+  padding: 10px 10px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  background-color: #202c37;
+  cursor: pointer;
+}
+.full-info .btn button {
+  border: none;
+  outline: none;
+  background: none;
+  text-transform: capitalize;
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+}
+.full-info .btn i {
+  color: white;
+}
+.full-info .info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .full-info .info > div {
+    width: calc(50% - 15px) !important;
+  }
+}
+.full-info .info > div {
+  width: 100%;
+}
+.full-info .info .big-flag img {
+  display: block;
+  width: 100%;
+}
+.full-info .info .details-info h3 {
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+.full-info .info .details-info .more-info {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .full-info .info .details-info .more-info > div {
+    width: calc(50% - 15px) !important;
+  }
+}
+.full-info .info .details-info .more-info > div {
+  width: 100%;
+}
+.full-info .info .details-info .more-info p {
+  color: white;
+}
+.full-info .info .border-counties p {
+  color: white;
+}
+.full-info .info .border-counties p span {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: #202c37;
+  text-align: center;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: lowercase;
+}
+.full-info .info .border-counties p span:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+footer {
+  margin: 30px 0;
+  text-align: center;
+}
+footer .container {
+  color: white;
+  font-size: 14px;
+}
+footer .container a {
+  text-transform: capitalize;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+footer .container a:hover {
+  color: #858585;
+}
+
+/*# sourceMappingURL=main.css.map */
