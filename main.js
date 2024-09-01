@@ -1,7 +1,5 @@
 const counties = document.querySelector(".countries .container");
 
-// import result from "./data.json" assert { type: "json" };
-
 async function getData() {
   const res = await fetch("./data.json");
   const data = await res.json();
@@ -13,7 +11,7 @@ const result = await getData();
 for (let i = 0; i < result.length; i++) {
   let box = document.createElement("div");
   box.setAttribute("class", "box");
-  box.setAttribute("id", `${i}`)
+  box.setAttribute("id", `${i}`);
   box.setAttribute("data-region", `${result[i].region}`);
   box.setAttribute("data-name", `${result[i].name}`);
   box.innerHTML = `
@@ -35,6 +33,7 @@ const select = document.querySelector("select");
 const allCountries = Array.from(
   document.querySelectorAll(".countries .container .box")
 );
+
 select.addEventListener("change", function () {
   allCountries.forEach((country) => {
     if (this.value == country.dataset.region) {
@@ -66,11 +65,15 @@ searchField.addEventListener("input", function () {
 //
 const countryInfo = document.querySelector(".full-info .container");
 searchField.addEventListener("input", function () {
-  let name = this.value.toLowerCase();
+  displayInfo(this);
+});
+
+function displayInfo(field) {
+  let name = field.value.toLowerCase();
   allCountries.forEach((country) => {
     if (name == country.dataset.name.toLowerCase()) {
       // back btn
-      let backBtn = document.createElement("div");
+      let backBtn = document.createElement("button");
       backBtn.setAttribute("class", "btn");
       backBtn.innerHTML = `
         <i class="fa-solid fa-arrow-left"></i>
@@ -125,19 +128,19 @@ searchField.addEventListener("input", function () {
         languages.appendChild(lanName);
       }
 
-            // borders
-            let borderCounties = document.createElement("div");
-            borderCounties.setAttribute("class", "border-counties");
-            let borders = document.createElement("p");
-            borders.innerHTML = `<strong>Borders: </strong>`;
-            let borderLen = result[+country.id].borders.length;
-            for (let i = 0; i < borderLen; i++) {
-                let span = document.createElement("span");
-              let spanTxt = document.createTextNode(`${result[+country.id].borders[i]}`);
-              span.appendChild(spanTxt);
-              borders.appendChild(span);
-            }
-            borderCounties.appendChild(borders);
+      // borders
+      let borderCounties = document.createElement("div");
+      borderCounties.setAttribute("class", "border-counties");
+      let borders = document.createElement("p");
+      borders.innerHTML = `<strong>Borders: </strong>`;
+      let borderLen = result[+country.id].borders.length;
+      for (let i = 0; i < borderLen; i++) {
+          let span = document.createElement("span");
+        let spanTxt = document.createTextNode(`${result[+country.id].borders[i]}`);
+        span.appendChild(spanTxt);
+        borders.appendChild(span);
+      }
+      borderCounties.appendChild(borders);
 
 
       div2.appendChild(domin);
@@ -156,4 +159,4 @@ searchField.addEventListener("input", function () {
       });
     }
   });
-});
+}
