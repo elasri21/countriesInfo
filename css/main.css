@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-  margin: 0 30pz;
+  margin: 0 30px;
 }
 @media (min-width: 1200px) {
   .container {

@@ -1,6 +1,14 @@
 const counties = document.querySelector(".countries .container");
 
-import result from "./data.json" assert { type: "json" };
+// import result from "./data.json" assert { type: "json" };
+
+async function getData() {
+  const res = await fetch("./data.json");
+  const data = await res.json();
+  return data;
+}
+
+const result = await getData();
 
 for (let i = 0; i < result.length; i++) {
   let box = document.createElement("div");
